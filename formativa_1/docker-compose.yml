@@ -1,0 +1,14 @@
+services:
+  web:
+    container_name: web_ionic_${app_name}
+    build: .
+    command: >
+      sh -c "cd ./${app_name} &&
+      ionic serve --host=0.0.0.0 --port=8100"
+    volumes:
+      - .:/code/${app_name}
+    ports:
+      - "8100:8100"
+    working_dir: /code/${app_name}
+    env_file:
+      - .env

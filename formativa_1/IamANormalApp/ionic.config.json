@@ -1,0 +1,7 @@
+{
+  "name": "IamANormalApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
