@@ -1,0 +1,39 @@
+<ion-header [translucent]="true"> </ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-card color="secondary" class="ion-text-center">
+          <ion-card-header>
+            <ion-card-title>SkeletonApp</ion-card-title>
+            <ion-card-subtitle
+              >inicia sesión para más funcionalidades</ion-card-subtitle
+            >
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-list>
+              <ion-list>
+                <ion-item>
+                  <h1>Inicio de sesión</h1>
+                </ion-item>
+                <ion-item>
+                  <ion-input label="Nombre" placeholder="username" [(ngModel)]="username"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input label="Password" type="password" value="no-valid" [(ngModel)]="password"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-button color="primary" expand="block" (click)="login()">Login</ion-button>
+                </ion-item>
+              </ion-list>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

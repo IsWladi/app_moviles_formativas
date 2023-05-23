@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mongo:5.0
+    hostname: mongo_dev
+    container_name: SkeletonApp_bd
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=thisIsAVeryGoodPasswordSHHHHHH
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_Skeleton:/data/db
+      - mongodb_config_Skeleton:/data/configdb
+    networks:
+      - skeleton_net
+  api:
+    container_name: SkeletonApp_api
+    build: ./api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 80
+    volumes:
+      - ./api:/code/
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    networks:
+      - skeleton_net
+networks:
+  skeleton_net:
+volumes:
+  mongodb_Skeleton:
+  mongodb_config_Skeleton:
