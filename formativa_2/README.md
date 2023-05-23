@@ -9,4 +9,5 @@
     - con username: admin, password: thisIsAVeryGoodPasswordSHHHHHH
 - en la conexion, crear una bd llamada skeleton y una coleccion llamada usuarios
 - importar el usuarios.json en la coleccion de usuarios para tener datos para trabajar
+- ir a carpeta ./SkeletonApp/ y ejecutar comando: `nmp install`
 - ir a carpeta ./SkeletonApp/ y ejecutar comando: `ionic serve`
