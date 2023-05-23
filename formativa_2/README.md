@@ -11,3 +11,5 @@
 - importar el usuarios.json en la coleccion de usuarios para tener datos para trabajar
 - ir a carpeta ./SkeletonApp/ y ejecutar comando: `nmp install`
 - ir a carpeta ./SkeletonApp/ y ejecutar comando: `ionic serve`
+
+util: docker exec -it SkeletonApp_bd mongo --authenticationDatabase admin -u admin -p thisIsAVeryGoodPasswordSHHHHHH
