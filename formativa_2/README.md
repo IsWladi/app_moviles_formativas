@@ -5,11 +5,13 @@
 ### Docker: MongoDB y FastApi
 - docker compose build
 - docker compose up -d
-- en mongoCompass hacer una nueva conexion(str de conexion: mongodb://localhost:27017)
-    - con username: admin, password: thisIsAVeryGoodPasswordSHHHHHH
-- en la conexion, crear una bd llamada skeleton y una coleccion llamada usuarios
-- importar el usuarios.json en la coleccion de usuarios para tener datos para trabajar
+- docker exec -it SkeletonApp_bd mongo --authenticationDatabase admin -u admin -p thisIsAVeryGoodPasswordSHHHHHH
+- use skeleton
+- db.createCollection("usuarios")
+- pegar el archivo de usuarios.json
+- exit(esto cerrara la shell de mongo)
+
+### Local: Ionic app
 - ir a carpeta ./SkeletonApp/ y ejecutar comando: `nmp install`
 - ir a carpeta ./SkeletonApp/ y ejecutar comando: `ionic serve`
 
-util: docker exec -it SkeletonApp_bd mongo --authenticationDatabase admin -u admin -p thisIsAVeryGoodPasswordSHHHHHH
