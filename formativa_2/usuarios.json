@@ -1,13 +1,13 @@
-[{
-  "nombre": "Juan",
-  "apellido": "Pérez",
-  "password": "123456"
+db.usuarios.insertMany([{
+  "nombre": "admin",
+  "apellido": "admin",
+  "password": "duoc123456"
 },{
-  "nombre": "Luis",
-  "apellido": "Eunesio",
-  "password": "hola123"
+  "nombre": "Luisa",
+  "apellido": "maria",
+  "password": "hola1234"
 },{
-  "nombre": "Juano",
-  "apellido": "Pérezoso",
-  "password": "hola"
-}]
+  "nombre": "Juanito",
+  "apellido": "Péres",
+  "password": "salalala"
+}])
