@@ -1,4 +1,17 @@
-db.usuarios.insertMany([{
+db.usuarios.insertMany(
+[{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "password": "123456"
+},{
+  "nombre": "Luis",
+  "apellido": "Eunesio",
+  "password": "hola123"
+},{
+  "nombre": "Juano",
+  "apellido": "Pérezoso",
+  "password": "hola"
+},{
   "nombre": "admin",
   "apellido": "admin",
   "password": "duoc123456"
@@ -10,4 +23,5 @@ db.usuarios.insertMany([{
   "nombre": "Juanito",
   "apellido": "Péres",
   "password": "salalala"
-}])
+}]
+)
