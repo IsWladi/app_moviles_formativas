@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header [translucent]="true"> </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-card color="secondary" class="ion-text-center">
+          <ion-card-header>
+            <ion-card-title>id usuario: {{user.id}}</ion-card-title>
+            <ion-card-subtitle
+              >Bienvenido a SkeletonApp, todavia no se que hace esta app</ion-card-subtitle
+            >
+          </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+          <ion-card-content>
+            <ion-list>
+              <ion-list>
+                <ion-item>
+                  <h1>tus datos</h1>
+                </ion-item>
+                <ion-item>
+                  <ion-input label="Nombre" placeholder="username" value="{{user.username}}"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input label="Apellido" placeholder="apellido" value=""></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input label="nivel educación" placeholder="ej: enseñanza media" value=""></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input label="Fecha nacimiento" placeholder="tu fecha nacimiento" value=""></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

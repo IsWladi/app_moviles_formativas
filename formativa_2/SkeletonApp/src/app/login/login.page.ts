@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +15,11 @@ import { IonicModule } from '@ionic/angular';
 export class LoginPage implements OnInit {
   username: string = "";
   password: string = "";
-
-  constructor() { }
+  user = {
+    username: "",
+    id: ""
+  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -38,7 +43,14 @@ export class LoginPage implements OnInit {
       .then(data => {
         // Manejar la respuesta de la API aquí
         if(data != "invalid"){
-          window.location.href = "/home";
+          this.user['username'] = this.username;
+          this.user['id'] = data;
+          const navigationExtras: NavigationExtras = {
+            state: {
+              user: this.user
+            } // Se envía el id del usuario
+          }
+          this.router.navigate(['/home'], navigationExtras);
         }
         else{
           alert("Usuario o contraseña incorrectos");
