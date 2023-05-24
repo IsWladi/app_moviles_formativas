@@ -24,7 +24,7 @@ app.add_middleware(
 
 # Configurar las credenciales de autenticación
 username = "admin"
-password = "thisIsAVeryGoodPasswordSHHHHHH"
+password = "mypassword"
 # Crear una instancia del cliente de MongoDB
 mongo_client = MongoClient("mongodb://SkeletonApp_bd:27017/",
                            username=username,
