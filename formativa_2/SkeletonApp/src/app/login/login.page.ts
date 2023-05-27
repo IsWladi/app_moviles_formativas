@@ -16,8 +16,11 @@ export class LoginPage implements OnInit {
   username: string = "";
   password: string = "";
   user = {
+    id: "",
     username: "",
-    id: ""
+    surname: "",
+    education: "",
+    date: "",
   }
   constructor(private router: Router) { }
 
@@ -43,12 +46,16 @@ export class LoginPage implements OnInit {
       .then(data => {
         // Manejar la respuesta de la API aquí
         if(data != "invalid"){
-          this.user['username'] = this.username;
-          this.user['id'] = data;
+          this.user['id'] = data['id'];
+          this.user['username'] = data['username'];
+          this.user['surname'] = data['surname'];
+          this.user['education'] = data['education'];
+          this.user['date'] = data['date'];
+
           const navigationExtras: NavigationExtras = {
             state: {
               user: this.user
-            } // Se envía el id del usuario
+            }
           }
           this.router.navigate(['/home'], navigationExtras);
         }

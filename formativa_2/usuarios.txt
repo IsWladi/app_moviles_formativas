@@ -2,11 +2,14 @@ db.usuarios.insertMany(
 [{
   "nombre": "Juan",
   "apellido": "Pérez",
-  "password": "123456"
+  "password": "123456",
+  "fechaNacimiento": "17/04/2000",
+  "educacion": "enseñanza media"
 },{
   "nombre": "Luis",
   "apellido": "Eunesio",
-  "password": "hola123"
+  "password": "hola123",
+  "educacion": "enseñanza superior"
 },{
   "nombre": "Juano",
   "apellido": "Pérezoso",
@@ -14,7 +17,8 @@ db.usuarios.insertMany(
 },{
   "nombre": "admin",
   "apellido": "admin",
-  "password": "duoc123456"
+  "password": "duoc123456",
+  "fechaNacimiento": "19/09/1995"
 },{
   "nombre": "Luisa",
   "apellido": "maria",

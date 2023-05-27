@@ -7,7 +7,7 @@
       <ion-col>
         <ion-card color="secondary" class="ion-text-center">
           <ion-card-header>
-            <ion-card-title>id usuario: {{user.id}}</ion-card-title>
+            <ion-card-title>SkeletonApp</ion-card-title>
             <ion-card-subtitle
               >Bienvenido a SkeletonApp, todavia no se que hace esta app</ion-card-subtitle
             >
@@ -20,19 +20,19 @@
                   <h1>tus datos</h1>
                 </ion-item>
                 <ion-item>
-                  <ion-input label="Nombre" placeholder="username" value="{{user.username}}"></ion-input>
+                  <ion-input label="Nombre" placeholder="username" value="{{user.username}}" ></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input label="Apellido" placeholder="apellido" value=""></ion-input>
+                  <ion-input label="Apellido" placeholder="apellido" value="{{user.surname}}" ></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input label="nivel educación" placeholder="ej: enseñanza media" value=""></ion-input>
+                  <ion-input label="nivel educación" placeholder="apellido" value="{{user.education}}" ></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input label="Fecha nacimiento" placeholder="tu fecha nacimiento" value=""></ion-input>
+                  <ion-input label="Fecha nacimiento" placeholder="tu fecha nacimiento" value="{{user.date}}" ></ion-input>
                 </ion-item>
               </ion-list>
             </ion-list>

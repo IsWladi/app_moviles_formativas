@@ -24,7 +24,7 @@ app.add_middleware(
 
 # Configurar las credenciales de autenticación
 username = "admin"
-password = "mypassword"
+password = "myPassword123"
 # Crear una instancia del cliente de MongoDB
 mongo_client = MongoClient("mongodb://SkeletonApp_bd:27017/",
                            username=username,
@@ -35,13 +35,32 @@ mongo_db = mongo_client["skeleton"]
 usuarios_collection = mongo_db["usuarios"]
 
 # retorna el id del usuario si es valido el login y false si no lo es
+
+
 @app.get("/usuario/login/{nombre}/{password}")
 def usuarioLogin(nombre: str, password: str):
     login = usuarios_collection.find_one(
-        {"nombre": nombre, "password": password}, {}
+        {"nombre": nombre, "password": password}, {"nombre": True,
+                                                   "apellido": True, "educacion": True, "fechaNacimiento": True}
     )
-    # Verificar si el usuario existe y si las credenciales son correctas
+
     if login:
-        return str(login["_id"])
+
+        # armar el json de retorno
+        dict_return = {}
+        dict_return["id"] = str(login["_id"])
+        dict_return["username"] = login["nombre"]
+
+        if "apellido" in login:
+            dict_return["surname"] = login["apellido"]
+
+        if "educacion" in login:
+            dict_return["education"] = login["educacion"]
+
+        if "fechaNacimiento" in login:
+            dict_return["date"] = login["fechaNacimiento"]
+
+        return dict_return
+
     else:
         return str("invalid")
