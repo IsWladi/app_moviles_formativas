@@ -5,7 +5,7 @@ services:
     container_name: SkeletonApp_bd
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+      - MONGO_INITDB_ROOT_PASSWORD=myPassword123
     ports:
       - 27017:27017
     volumes:
